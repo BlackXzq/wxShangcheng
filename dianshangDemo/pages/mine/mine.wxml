@@ -1,0 +1,56 @@
+
+<view class='mine-container'>
+  <view class='section'>
+    <view class='header'>
+      <image class='header-avatar' src='{{userInfo.avatarUrl}}'></image>
+      <view class='header-userName'>
+        <text>{{userInfo.nickName}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='section'>
+    <view class='balance'>
+      <view class='balance-text'>
+        <text>余额 {{blanceY}} 元，冻结 {{blanceD}} 元</text>
+      </view>
+      <view class='balance-btn'>
+        <button class='balance-btn-cz' type='primary'>充值</button>
+        <button class='balance-btn-tx' type='warn'>提现</button>
+      </view>
+    </view>
+
+    <view class='content'>
+      <view class='content-item' id="{{items[index].itemTagName}}" wx:for="{{items}}" bindtap='tapItemClick' >
+        <view class='item-text'>
+          <text>{{item.title}}</text>
+        </view>
+        <button wx:if='{{item.showBtn}}'>每日签到</button>   
+        <image wx:if="{{item.showArrow}}" src='/images/arrow-right.png'></image> 
+      </view>
+
+      <view class='bindPhoneView'>
+        <button>绑定手机号码</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='section'>
+      <view class='content-item' id='关于我们' bindtap='tapItemClick' >
+        <view class='item-text'>
+          <text>关于我们</text>
+        </view>
+        <image src='/images/arrow-right.png'></image> 
+      </view>
+  </view>
+
+  <view class='section'>
+    <button type='warn'>重新登录</button>
+  </view>
+
+  <view class='section'>
+    <view class='version'>
+      <text>Powered by EastWorld v 2.0</text>
+    </view>
+  </view>
+</view>

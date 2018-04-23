@@ -1,0 +1,87 @@
+/* pages/mine/mine.wxss */
+
+.section {
+  border-bottom: 20rpx solid #eee;
+}
+
+.header {
+  width: 100%;
+  height: 400rpx;
+  background-color: #e85654;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background: lightgray;
+  margin-top: 80rpx;
+}
+
+.header-userName {
+  color: white;
+  margin-top: 30rpx;
+}
+
+.balance {
+  padding: 20rpx 50rpx 20rpx 50rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.balance-text {
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+.balance-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.balance-btn-cz {
+  width: 50%;
+  margin-right: 30rpx;
+}
+
+.balance-btn-tx {
+  width: 50%;
+  margin-left: 30rpx;
+}
+.content-item {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  padding: 40rpx 50rpx 40rpx 50rpx;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.content-item button {
+  width: 200rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 50rpx;
+}
+
+.content-item image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.bindPhoneView button {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  width: 300rpx;
+  height: 90rpx;
+}
+
+.version {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}

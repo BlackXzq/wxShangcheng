@@ -1,0 +1,27 @@
+
+<view class='index-container'>
+  <view class="section">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" bindtap='tapSwiperImg' data-index="{{index}}" class="slide-image" mode='widthFix' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="section">
+    <view class="header">
+      <text>精品推荐</text>
+      <text>全部精品</text>
+    </view>
+  </view>
+
+  <view class="section">
+
+  </view>
+
+</view>
+
+
