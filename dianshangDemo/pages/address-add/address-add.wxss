@@ -31,3 +31,20 @@ page {
   bottom: 0;
   right: 50rpx;
 }
+
+.form-btn button{
+  margin: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 36rpx;
+}
+
+picker {
+  margin-left: 50rpx;
+  min-width: 20rpx;
+  height: 100%;
+  margin-right: 20rpx;
+}
+.hui{
+  color: #777;
+}

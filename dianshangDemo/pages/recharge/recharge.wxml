@@ -4,7 +4,7 @@
     <form bindsubmit="rechargeFormSubmit">
         <view class='recharge-content-cxt'>
           <text>充值金额</text>
-          <input type='text' placeholder='至少100元起' name="rechargeInput"></input>
+          <input type='number' placeholder='至少100元起' name="rechargeInput"></input>
         </view>
         <button type='warn' form-type='submit'>立即支付</button>
         <button type='default' bindtap='cancel'>取消</button>
@@ -20,7 +20,7 @@
       <form bindsubmit="tixianFormSubmit">
         <view class='tixian-content-cxt'>
           <text>充值金额</text>
-          <input type='text' placeholder='至少100元起' name="tixianInput"></input>
+          <input type='number' placeholder='至少100元起' name="tixianInput"></input>
         </view>
         <button type='warn' form-type='submit'>申请提现</button>
         <button type='default' bindtap='cancel'>取消</button>

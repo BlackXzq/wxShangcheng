@@ -1,0 +1,6 @@
+
+<view class="select-address-container">
+  <view class='bottom-box'>
+    <view class='add-btn' bindtap='gotoOrder'>立即前往下单</view>
+  </view>
+</view>

@@ -44,6 +44,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     app.getUserInfo(function(info){
+      console.log(info);
       that.setData({
         userInfo: info
       })
@@ -120,6 +121,9 @@ Page({
         break;
       case "youhuiquan":
         console.log("我的优惠券");
+        wx.navigateTo({
+          url: '../youhuiquan/youhuiquan',
+        })
         break;
       case "ours":
         console.log("关于我们");
