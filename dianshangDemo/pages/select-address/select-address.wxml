@@ -1,0 +1,6 @@
+
+<view class="select-address-container">
+  <view class='bottom-box'>
+    <view class='add-btn' bindtap='addAddress'>新增收货地址</view>
+  </view>
+</view>

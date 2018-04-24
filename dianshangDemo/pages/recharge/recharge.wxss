@@ -1,0 +1,60 @@
+
+page {
+  background: #eee;
+}
+
+.tixian-content-cxt {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx 0 30rpx 0;
+  height: 100rpx;
+  align-items: center;
+}
+
+.tixian-content-cxt text {
+  font-size: 14px;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.tixian-content-cxt input {
+  font-size: 14px;
+  padding-left: 10rpx;
+}
+
+.tixian-content button {
+  margin: 30rpx;
+}
+
+.recharge-content-cxt {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx 0 30rpx 0;
+  height: 100rpx;
+  align-items: center;
+}
+
+.recharge-content-cxt text {
+  font-size: 14px;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.recharge-content-cxt input {
+  font-size: 14px;
+  padding-left: 10rpx;
+}
+
+.recharge-content button {
+  margin: 30rpx;
+}
+
+.tipMessage {
+  font-size: 14px;
+}
+
+.tipMessage view {
+  margin: 30rpx;
+}

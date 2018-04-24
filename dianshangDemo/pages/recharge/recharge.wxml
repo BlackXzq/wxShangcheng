@@ -1,0 +1,30 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='recharge-container'>
+  <view wx:if="{{isRecharge}}" class='recharge-content'>
+    <form bindsubmit="rechargeFormSubmit">
+        <view class='recharge-content-cxt'>
+          <text>充值金额</text>
+          <input type='text' placeholder='至少100元起' name="rechargeInput"></input>
+        </view>
+        <button type='warn' form-type='submit'>立即支付</button>
+        <button type='default' bindtap='cancel'>取消</button>
+      </form>
+      <view class='tipMessage'>
+        <view>您也可以直接给下面的支付宝账户转账；</view>
+        <view>转账金额将自动进入您的账户；</view>
+      </view>
+
+  </view>
+  <block wx:else>
+    <view class='tixian-content'>
+      <form bindsubmit="tixianFormSubmit">
+        <view class='tixian-content-cxt'>
+          <text>充值金额</text>
+          <input type='text' placeholder='至少100元起' name="tixianInput"></input>
+        </view>
+        <button type='warn' form-type='submit'>申请提现</button>
+        <button type='default' bindtap='cancel'>取消</button>
+      </form>
+    </view>
+  </block>
+</view>

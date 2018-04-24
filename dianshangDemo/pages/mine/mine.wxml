@@ -15,8 +15,8 @@
         <text>余额 {{blanceY}} 元，冻结 {{blanceD}} 元</text>
       </view>
       <view class='balance-btn'>
-        <button class='balance-btn-cz' type='primary'>充值</button>
-        <button class='balance-btn-tx' type='warn'>提现</button>
+        <button bindtap='rechargeClick' class='balance-btn-cz' type='primary'>充值</button>
+        <button bindtap='tixianClick' class='balance-btn-tx' type='warn'>提现</button>
       </view>
     </view>
 
@@ -25,7 +25,7 @@
         <view class='item-text'>
           <text>{{item.title}}</text>
         </view>
-        <button wx:if='{{item.showBtn}}'>每日签到</button>   
+        <button wx:if='{{item.showBtn}}' bindtap='signClick'>每日签到</button>   
         <image wx:if="{{item.showArrow}}" src='/images/arrow-right.png'></image> 
       </view>
 
@@ -36,7 +36,7 @@
   </view>
 
   <view class='section'>
-      <view class='content-item' id='关于我们' bindtap='tapItemClick' >
+      <view class='content-item' id='ours' bindtap='tapItemClick' >
         <view class='item-text'>
           <text>关于我们</text>
         </view>
