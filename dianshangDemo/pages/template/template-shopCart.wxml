@@ -1,0 +1,23 @@
+
+<template name="noGoods">
+  <view class='nonegoods'>
+    <image src='/images/icon-cart.png'></image>
+    <view class='nonegoods-text'>
+      <text>购物车空空如也～</text>
+    </view>
+    <button bindtap='tapguang' type='warn'>去逛逛</button>
+  </view>
+</template>
+
+<template name="goodsList">
+  <view class='list-top'>
+    微商城
+  </view>
+  <view class="goodsList">
+    <view class='goodItems'>
+      <view class='item' wx:for="{{goods}}">
+      {{item.price}}
+      </view>
+    </view>
+  </view>
+</template>

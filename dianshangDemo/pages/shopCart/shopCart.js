@@ -1,25 +1,36 @@
 // pages/shopCart/shopCart.js
+
+var shopData = require('../../utils/shopCartMock.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    goods:[]
+    goods:{
+      list:[]
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var goodlist = shopData.shoplist;
+    var useList = {
+      list: goodlist
+    };
+    this.setData({
+      goods: useList
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    console.log(this.data.goods);
   },
 
   /**

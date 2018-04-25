@@ -1,0 +1,8 @@
+
+<template name="add-conent">
+  <view class='bottom-box'>
+    <view class='add-btn' bindtap='gotoAddClick'>{{value}}</view>
+  </view>
+</template>
+
+

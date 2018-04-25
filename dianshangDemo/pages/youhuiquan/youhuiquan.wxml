@@ -1,6 +1,7 @@
 
+<import src="../template/template-add.wxml" />
+
 <view class="select-address-container">
-  <view class='bottom-box'>
-    <view class='add-btn' bindtap='gotoOrder'>立即前往下单</view>
-  </view>
+  <template is="add-conent" data="{{...item}}">
+  </template>
 </view>

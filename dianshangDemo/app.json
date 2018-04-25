@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/start/start",
+    "pages/shopCart/shopCart",
     "pages/youhuiquan/youhuiquan",
+    "pages/start/start",
     "pages/select-address/select-address",
     "pages/address-add/address-add",
     "pages/mine/mine",
     "pages/recharge/recharge",
-    "pages/shopCart/shopCart",
     "pages/index/index",
     "pages/logs/logs",
     "pages/order-list/order-list"

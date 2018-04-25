@@ -5,12 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    item:{
+      value:"新增收货地址"
+    }
   },
   /**
    * 添加收获地址
    */
-  addAddress: function() {
+  gotoAddClick: function() {
     wx.navigateTo({
       url: '../address-add/address-add',
     })

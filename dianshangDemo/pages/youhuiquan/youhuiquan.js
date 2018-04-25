@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    item: {
+      value: "立即前往下单"
+    }
   },
 
   /**
@@ -14,7 +16,7 @@ Page({
   onLoad: function (options) {
   
   },
-  gotoOrder: function() {
+  gotoAddClick: function() {
     wx.reLaunch({
       url: '/pages/index/index'
     })
