@@ -3,5 +3,5 @@
 
 
 <view class="cart-container">
-  <template is="{{goods.length > 0 ? 'goodsList' : 'noGoods'}}" data="{{...goods}}"></template>
+  <template is="{{goods.list.length > 0 ? 'goodsList' : 'noGoods'}}" data="{{...goods}}"></template>
 </view>

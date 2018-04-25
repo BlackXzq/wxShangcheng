@@ -8,19 +8,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods:{
-      list:[]
-    }
+    goods:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var goodlist = shopData.shoplist;
+    var goodlist = shopData.shopList;
+    console.log(goodlist);
     var useList = {
       list: goodlist
     };
+    console.log(useList);
     this.setData({
       goods: useList
     });
@@ -30,7 +30,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log(this.data.goods);
+    // var goodlist = shopData.shopList;
+    // console.log(goodlist);
+    // console.log(this.data.goods);
   },
 
   /**

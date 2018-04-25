@@ -14,9 +14,23 @@
     微商城
   </view>
   <view class="goodsList">
-    <view class='goodItems'>
-      <view class='item' wx:for="{{goods}}">
-      {{item.price}}
+    <view class='item' wx:for="{{list}}">
+      <view class='item-content'>
+        <view class='goods-info'>
+          <view class='img-box'>
+            <image src='{{item.icon}}' class='img'></image>
+          </view>
+          <view class='text-box'>
+            <view class='goods-title'>{{item.title}}</view>
+            <view class='goods-label'>{{item.content}}</view>
+            <view class='goods-price'>¥ {{item.price}}</view>
+            <view class='buy-num'>
+              <view class='jian-btn {{item.num==1 ? "disabled" : ""}}' catchtap="jianBtnTap" data-index="{{index}}">-</view>
+              <input type='num' value='{{item.num}}' disabled></input>
+              <view class='jia-btn {{item.num==10 ? "disabled" : ""}}' catchtap="jiaBtnTap" data-index="{{index}}">+</view>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
   </view>
