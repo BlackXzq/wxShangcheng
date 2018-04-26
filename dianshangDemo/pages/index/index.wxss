@@ -1,8 +1,21 @@
 
-.slide-image {
+.searchContent {
+  background-color: rgba(100, 100, 100, 0.3);
+  /* height: 80rpx; */
+  top: 0;
   width: 100%;
+  /* line-height: 80rpx; */
+  position: fixed;
 }
 
-.header {
-  border-left: 
+.searchBar {
+  margin: 20rpx 50rpx 20rpx 50rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: white;
+  border-radius: 6rpx;
+}
+
+.slide-image {
+  width: 100%;
 }

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/shopCart/shopCart",
     "pages/youhuiquan/youhuiquan",
     "pages/start/start",
@@ -7,7 +8,6 @@
     "pages/address-add/address-add",
     "pages/mine/mine",
     "pages/recharge/recharge",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/order-list/order-list"
   ],
