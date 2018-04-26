@@ -43,6 +43,7 @@ Page({
     this.initEleWidth();
     var goodlist = shopData.shopList;
     this.setGoodsData(this.totalPrice(), this.caculAllselect(), goodlist);
+    this.setGoodsData(this.totalPrice(), this.caculAllselect(), goodlist);
   },
 
 
@@ -177,10 +178,40 @@ Page({
       var item = list[i];
       if (item.isSelect) {
         var itemprice = item.price*item.num;
-        console.log("OO: " + itemprice);
+        sum = sum + itemprice;
       }
     }
     return sum;
+  },
+
+  gopayclick: function(e) {
+    var that = this;
+    var totalprice = e.currentTarget.dataset.price;
+    var list = this.data.goods.list;
+    var temlist = [];
+    for(var i=0; i<list.length; i++) {
+      var item = list[i];
+      if (!item.isSelect) {
+        temlist.push(item);
+      }
+    } 
+    wx.showModal({
+      title: '确认',
+      content: '确认购买 ' + totalprice + " 元商品吗？",
+      success:function(res) {
+        if (res.confirm) {
+          that.setData({
+            goods: {
+              totalPrice: 0,
+              isAllSeleted: false,
+              list: temlist
+            }
+          });
+        } else if(res.cancel) {
+          console.log("取消");
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
