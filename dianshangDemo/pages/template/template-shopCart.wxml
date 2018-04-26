@@ -14,8 +14,9 @@
     微商城
   </view>
   <view class="goodsList">
-    <view class='item' wx:for="{{list}}">
-      <view class='item-content'>
+    <view class='item' wx:for="{{list}}" wx:key="{{index}}">
+      <view class='item-content {{item.isSelect ? "selected" : ""}}' bindtap='selectTap' bindtouchstart='touchS' 
+            bindtouchmove='touchM' bindtouchend='touchE' data-index="{{index}}" style="{{item.left}}">
         <view class='goods-info'>
           <view class='img-box'>
             <image src='{{item.icon}}' class='img'></image>
@@ -31,7 +32,15 @@
             </view>
           </view>
         </view>
+        <view class="delete-btn" data-index="{{index}}" catchtap="delItemClick">
+          删除
+        </view>
       </view>
     </view>
+  </view>
+  <view class='list-bottom'>
+    <view class="all-select {{isAllSeleted ? 'allAtive' : ''}}" bindtap='selectAllClick'>全选</view>
+    <view class="total-price" wx:if="{{totalPrice > 0}}">合计：¥ {{totalPrice}}</view>
+    <view class="payAll {{totalPrice > 0 ? 'payActive' : ''}}">去结算</view>
   </view>
 </template>

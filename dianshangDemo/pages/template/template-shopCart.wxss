@@ -50,6 +50,11 @@
   width: 870rpx;
   box-sizing: border-box;
   transition: margin-left 0.2s ease-in-out;
+  background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx center;
+  background-size: 40rpx auto; 
+}
+
+.item-content.selected{
   background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
   background-size: 40rpx auto; 
 }
@@ -158,4 +163,56 @@
 .img-box .img {
   width: 160rpx;
   height: 160rpx;
+}
+
+.delete-btn {
+  width: 120rpx;
+  line-height: 220rpx;
+  text-align: center;
+  background: #e64340;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.list-bottom {
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  bottom: 0;
+  background-color: white;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.all-select {
+  background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx center;
+  background-size: 40rpx auto; 
+  padding-left: 90rpx;
+  font-size: 28rpx;
+}
+
+.all-select.allAtive {
+  background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
+  background-size: 40rpx auto; 
+}
+
+.total-price {
+  color: #e64340;
+  font-size: 28rpx;
+}
+
+.payAll {
+  background-color:lightgray;
+  color: white;
+  width: 200rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.payAll.payActive {
+  background-color:#e64340;
 }
