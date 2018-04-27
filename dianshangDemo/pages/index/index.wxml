@@ -15,6 +15,7 @@
 <view class='searchContent'>
   <view class='searchBar'>
     <input placeholder='请输入搜索内容'></input>
+    
   </view>
 </view>
 
