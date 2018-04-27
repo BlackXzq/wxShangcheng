@@ -1,22 +1,58 @@
 
 <view class='index-container'>
-  <view class="section">
-    <swiper indicator-dots="{{indicatorDots}}"
-      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+  <view class="swiper-setion">
+    <swiper class="swiper-box" indicator-dots="true"
+      autoplay="true" interval="3000" duration="1000" circular="true">
       <block wx:for="{{imgUrls}}">
         <swiper-item>
-          <image src="{{item}}" bindtap='tapSwiperImg' data-index="{{index}}" class="slide-image" mode='widthFix' />
+          <image src="{{item}}" bindtap='tapSwiperImg' data-index="{{index}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
   </view>
+
+  <view class='searchContent'>
+    <view class='searchBar'>
+      <image src='/images/search-pic.png' class='search-icon'></image>
+      <input placeholder='请输入搜索内容' class='search-input' confirm-type='搜索' 
+            bindinput='listenerSearchInput' bindconfirm='toSearch'></input>
+      <button class='search-btn' bindtap='toSearch'>搜索</button>
+     </view>
+  </view>
+
+  <view class='type-section'>
+    <scroll-view class="type-scrollView" scroll-x="true">
+      <view class="type-box" wx:for-items="{{types}}">
+        <view class="type-item {{selectTypeIndex == index ? 'active' : ''}}" data-index="{{index}}" bindtap='typeItemClick'>
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='notice-section'>
+    <view class='notice-title'>公告：</view>
+    <swiper class='notice-swiper' circular='true' autoplay="true" interval="3000" duration="2000">
+      <block wx:for="{{notices}}">
+        <swiper-item>
+          <view class="notice-item">{{item}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='coupons-section'>
+    <scroll-view class='coupons-scrollview' scroll-x="true">
+      <view class='coupons-item' wx:for-items="{{coupons}}">
+        <view class='coupons-item-price'>¥ {{item.price}}元</view>
+        <view class='coupons-item-tip'>新店优惠</view>
+        <view class='coupons-item-full'>满 {{item.fullPrice}} 元使用</view>
+        <view class='coupons-item-valid'>领取 {{item.validDay}} 天内有效</view>
+      </view>
+    </scroll-view>
+  </view>
+
 </view>
 
-<view class='searchContent'>
-  <view class='searchBar'>
-    <input placeholder='请输入搜索内容'></input>
-    
-  </view>
-</view>
 
 
