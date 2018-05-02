@@ -163,3 +163,36 @@
 .coupons-item-valid {
   padding-bottom: 15rpx;
 }
+
+.goods-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  padding: 24rpx;
+}
+
+.goodItem {
+  width: 340rpx;
+  height: 472rpx;
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: 24rpx;
+}
+
+.goodImg {
+  width: 340rpx;
+  height: 340rpx;
+  overflow: hidden;
+}
+
+.goodName {
+  width: 280rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24rpx;
+  padding: 24rpx 0 0 0;
+  color: #000;
+  margin-left: 24rpx;
+}

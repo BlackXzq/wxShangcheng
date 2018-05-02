@@ -52,6 +52,18 @@
     </scroll-view>
   </view>
 
+  <view class='goods-section'>
+    <view class='goodItem' wx:for-items="{{goodsList}}">
+      <image class='goodImg' src='{{item.url}}'></image>
+      <view class='goodName'>{{item.name}}</view>
+      <view class='goodPriceContent'>
+        <view class='goodPrice'>{{item.price}}</view>
+        <view class='goodOriPrice'>{{item.oriPrice}}</view>
+        <view class='goodLine'></view>
+      </view>
+    </view>
+  </view>
+
 </view>
 
 

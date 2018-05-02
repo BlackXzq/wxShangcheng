@@ -34,6 +34,44 @@ Page({
         fullPrice: 100,
         validDay: 7      
       }
+    ],
+    goodsList: [
+      {
+        url:"https://cdn.it120.cc/apifactory/2017/10/30/b07ee85fa64f0c68aa9a45fba20ec689.jpg",
+        name:"初冬蕾丝裙初冬蕾丝裙初冬蕾丝裙",
+        price:20,
+        oriPrice: 50
+      },
+      {
+        url: "https://cdn.it120.cc/apifactory/2017/09/18/92b79640b3c2c2bfdf1cb972c1d95992.jpg",
+        name: "开爱套裙",
+        price: 30,
+        oriPrice: 60
+      },
+      {
+        url: "https://cdn.it120.cc/apifactory/2017/10/30/b07ee85fa64f0c68aa9a45fba20ec689.jpg",
+        name: "初冬蕾丝裙",
+        price: 120,
+        oriPrice: 250
+      },
+      {
+        url: "https://cdn.it120.cc/apifactory/2017/09/18/92b79640b3c2c2bfdf1cb972c1d95992.jpg",
+        name: "开爱套裙",
+        price: 50,
+        oriPrice: 90
+      },
+      {
+        url: "https://cdn.it120.cc/apifactory/2017/09/18/3e1d9b4200ba4ea4fe0c607d5b67b2aa.jpg",
+        name: "初冬蕾丝裙",
+        price: 20,
+        oriPrice: 50
+      },
+      {
+        url: "https://cdn.it120.cc/apifactory/2017/09/18/92b79640b3c2c2bfdf1cb972c1d95992.jpg",
+        name: "开爱套裙",
+        price: 300,
+        oriPrice: 960
+      }
     ]
   },
 
