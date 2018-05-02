@@ -26,7 +26,7 @@ Page({
       },
       {
         price: 25,
-        fullPrice: 200,
+        fullPrice: 100,
         validDay: 10
       },
       {
