@@ -1,5 +1,5 @@
 
-<view class='index-container'>
+<view class='index-container' bindtouchstart='touchS' bindtouchmove='touchM'>
   <view class="swiper-setion">
     <swiper class="swiper-box" indicator-dots="true"
       autoplay="true" interval="3000" duration="1000" circular="true">
@@ -57,9 +57,8 @@
       <image class='goodImg' src='{{item.url}}'></image>
       <view class='goodName'>{{item.name}}</view>
       <view class='goodPriceContent'>
-        <view class='goodPrice'>{{item.price}}</view>
-        <view class='goodOriPrice'>{{item.oriPrice}}</view>
-        <view class='goodLine'></view>
+        <view class='goodPrice'>¥ {{item.price}}</view>
+        <view class='goodOriPrice'>¥ {{item.oriPrice}}</view>
       </view>
     </view>
   </view>

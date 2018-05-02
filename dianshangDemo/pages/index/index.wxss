@@ -187,12 +187,33 @@
 }
 
 .goodName {
-  width: 280rpx;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   font-size: 24rpx;
-  padding: 24rpx 0 0 0;
+  padding: 20rpx 0 0 0;
   color: #000;
   margin-left: 24rpx;
+}
+ 
+.goodPriceContent {
+  margin: 20rpx;
+  width: 300rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.goodPrice {
+  color: red;
+  width: 50%;
+  font-size: 30rpx;
+}
+
+.goodOriPrice {
+  text-align: right;
+  width: 50%;
+  color: #999999;
+  text-decoration: line-through;
 }

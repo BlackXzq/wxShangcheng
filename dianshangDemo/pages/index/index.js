@@ -43,12 +43,6 @@ Page({
         oriPrice: 50
       },
       {
-        url: "https://cdn.it120.cc/apifactory/2017/09/18/92b79640b3c2c2bfdf1cb972c1d95992.jpg",
-        name: "开爱套裙",
-        price: 30,
-        oriPrice: 60
-      },
-      {
         url: "https://cdn.it120.cc/apifactory/2017/10/30/b07ee85fa64f0c68aa9a45fba20ec689.jpg",
         name: "初冬蕾丝裙",
         price: 120,
@@ -80,7 +74,22 @@ Page({
     this.setData({
       selectTypeIndex:index
     });
+    var random = Math.random()*6;
+    console.log(parseInt(random));
   }, 
+
+  touchS: function (e) {
+    if (e.touches.length == 1) {
+      this.setData({
+        startX: e.touches[0].clientY
+      });
+      console.log(e.touches[0].clientY);
+    }
+  },
+
+  touchM: function (e) {
+
+  },
 
   /**
    * 生命周期函数--监听页面加载
