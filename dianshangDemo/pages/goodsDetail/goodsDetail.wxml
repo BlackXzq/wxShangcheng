@@ -1,0 +1,61 @@
+
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class="goodsDetailContainer">
+  <view class='swiper-section section'>
+    <swiper class="swiper-box" indicator-dots="true"
+      autoplay="true" interval="3000" duration="1000" circular="true">
+      <block wx:for="{{goodsPics}}">
+        <swiper-item>
+          <image src="{{item.pic}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='goods-info' wx:if="{{goodsInfo}}">
+      <view class='info-contain'>
+        <view class='info-title'>{{goodsInfo.name}}</view>
+        <view class='info-detail'>
+          <view class="info-price">¥ {{goodsInfo.minPrice}}</view>
+          <view class="info-oriprice">¥ {{goodsInfo.originalPrice}}</view>
+          <view class="info-buynum">购买 {{goodsInfo.numberOrders}} 次</view>
+          <view class="info-rqnum">共收到 {{goodsInfo.numberGoodReputation}} 次好评</view>
+        </view>
+      </view>
+      <view class='info-share'>
+        <image class='share-img' src='../../images/qd.png'></image>
+        <view class='share-txt'>分享有赏</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='selectType section'>
+    <view class='selecttype-SC'>选择： 尺码  颜色</view>
+  </view>
+
+  <view class='goodsJS section'>
+    <view class='goodsJS-title'>商品介绍</view>
+    <view class='goodsJS-text'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <view class='footer-left'>
+      <view class='footer-left-kefu'>
+        <image src='https://cdn.it120.cc/images/weappshop/kefu.png'></image>
+        <view>客服</view>
+      </view>
+      <view class='footer-left-cart'>
+        <image src='https://cdn.it120.cc/images/weappshop/cart.png'></image>
+        <view>购物车</view>
+      </view>
+    </view>
+    <view class='footer-mid'>
+      加入购物车
+    </view>
+    <view class='footer-right'>
+      立即购买
+    </view>
+  </view>
+
+</view>
