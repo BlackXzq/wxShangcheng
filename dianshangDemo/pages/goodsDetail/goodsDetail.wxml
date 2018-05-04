@@ -23,13 +23,14 @@
       </view>
       <view class='info-share'>
         <image class='share-img' src='../../images/qd.png'></image>
+        <button open-type='share'>分享</button>
         <view class='share-txt'>分享有赏</view>
       </view>
     </view>
   </view>
 
   <view class='selectType section'>
-    <view class='selecttype-SC'>选择： 尺码  颜色</view>
+    <view class='selecttype-SC' bindtap='gobuy' data-type='toBuy'>选择： 尺码  颜色</view>
   </view>
 
   <view class='goodsJS section'>
@@ -42,19 +43,57 @@
   <view class='footer'>
     <view class='footer-left'>
       <view class='footer-left-kefu'>
+        <button open-type='contact' session-from='weapp'>客服</button>
         <image src='https://cdn.it120.cc/images/weappshop/kefu.png'></image>
         <view>客服</view>
       </view>
-      <view class='footer-left-cart'>
+      <view class='footer-left-cart' bindtap='gotoShopCart'>
         <image src='https://cdn.it120.cc/images/weappshop/cart.png'></image>
         <view>购物车</view>
       </view>
     </view>
-    <view class='footer-mid'>
+    <view class='footer-mid' bindtap='gobuy' data-type='toShorpCart'>
       加入购物车
     </view>
-    <view class='footer-right'>
+    <view class='footer-right' bindtap='gobuy' data-type='toBuy'>
       立即购买
+    </view>
+  </view>
+
+  <view class='show-popup' hidden='{{popupViewHidden}}'>
+    <view class='popup-mask' bindtap='popupViewClose'></view>
+    <view class='popup-contents'>
+      <view class='pop-goods-info'>
+        <view class='pop-img-box'>
+          <image class='goods-thumbnail' src='{{goodsInfo.pic}}'></image>
+        </view>
+        <view class='pop-goods-des'>
+          <view class='pop-goods-title'>{{goodsInfo.name}}</view>
+          <view class='pop-goods-price'>{{goodsInfo.minPrice}}</view>
+        </view>
+        <view class='pop-goods-close' bindtap='popupViewClose'></view>
+      </view>
+      <view class='size-label-box'>
+        <block wx:for="{{properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+          <view class='label'>{{property.name}}</view>
+          <view class='label-item-box'>
+            <view class='label-item {{item.active ? "active" : ""}}' wx:for="{{property.childsCurGoods}}" wx:key="id" bindtap='labelItemTap' data-propertyIndex="{{idx}}" data-propertyId="{{property.id}}" data-propertyChildIndex='{{index}}'>{{item.name}}</view>
+          </view>
+        </block>
+      </view>
+      <view class='buy-num-box'>
+        <view class='num-label'>购买数量</view>
+        <view class='num-box'>
+          <view class='num-jian {{buyNumber == buyNumMin ? "hui":""}}' bindtap='numJiantap'>-</view>
+          <view class='num-input'>
+            <input type='number' value='{{buyNumber}}' disabled='true'></input>
+          </view>
+          <view class='num-jia {{buyNumber == buyNumMax ? "hui":""}}' bindtap='numJiaTap'>+</view>
+        </view>
+      </view>
+
+      <view class='popup-join-btn' wx:if="{{popupType == 'toShorpCart'}}" bindtap='addShopCart'>加入购物车</view>
+      <view class='popup-join-btn' wx:if="{{popupType == 'toBuy'}}" bindtap='addShopCart'>立即购买</view>
     </view>
   </view>
 

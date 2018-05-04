@@ -8,11 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
+    banners: null,
     types: ["全部", "上装", "裤装","家居内衣","特价区","裙装","套装","外套","秒杀"],
     selectTypeIndex:0,
     notices:["商铺新开张，优惠多多，戳 戳 我看详情",
@@ -78,24 +74,56 @@ Page({
     console.log(parseInt(random));
   }, 
 
-  touchS: function (e) {
-    if (e.touches.length == 1) {
-      this.setData({
-        startX: e.touches[0].clientY
-      });
-      console.log(e.touches[0].clientY);
-    }
-  },
-
-  touchM: function (e) {
-
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    wx.request({
+      url: 'https://api.it120.cc/tz/banner/list',
+      data: {
+        key: 'mallName'
+      },
+      success: function (res) {
+        if (res.data.code == 404) {
+          wx.showModal({
+            title: '提示',
+            content: '请在后台添加 banner 轮播图片',
+            showCancel: false
+          })
+        } else {
+          that.setData({
+            banners: res.data.data
+          });
+        }
+      }
+    })
+
+    wx.request({
+      url: 'https://api.it120.cc/tz/shop/goods/category/all',
+      success: function (res) {
+        var categories = [{ id: 0, name: "全部" }];
+        if (res.data.code == 0) {
+          for (var i = 0; i < res.data.data.length; i++) {
+            categories.push(res.data.data[i]);
+          }
+        }
+        that.setData({
+          categories: categories,
+          activeCategoryId: 0
+        });
+        that.getGoodsList(0);
+      }
+    })
+
+  },
+
+  tapSwiperImg: function (e) {
+    if (e.currentTarget.dataset.id != 0) {
+      wx.navigateTo({
+        url: "/pages/goodsDetail/goodsDetail?id=" + e.currentTarget.dataset.id
+      })
+    }
   },
 
   /**
@@ -124,8 +152,5 @@ Page({
    */
   onUnload: function () {
     
-  },
-  tapSwiperImg: function(e) {
-    console.log(e.currentTarget.dataset.index);
   }
 })
