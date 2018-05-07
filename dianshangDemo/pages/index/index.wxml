@@ -23,8 +23,8 @@
   <view class='type-section'>
     <scroll-view class="type-scrollView" scroll-x="true">
       <view class="type-box" wx:for-items="{{types}}">
-        <view class="type-item {{selectTypeIndex == index ? 'active' : ''}}" data-index="{{index}}" bindtap='typeItemClick'>
-          {{item}}
+        <view class="type-item {{currentTypeID == item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap='typeItemClick'>
+          {{item.name}}
         </view>
       </view>
     </scroll-view>
@@ -53,14 +53,15 @@
   </view>
 
   <view class='goods-section'>
-    <view class='goodItem' wx:for-items="{{goodsList}}">
-      <image class='goodImg' src='{{item.url}}'></image>
+    <view class='goodItem' wx:if="{{goodsList.length > 0}}"  wx:for-items="{{goodsList}}" data-typeid='{{item.id}}' bindtap='goodsItemTap'>
+      <image class='goodImg' src='{{item.pic}}'></image>
       <view class='goodName'>{{item.name}}</view>
       <view class='goodPriceContent'>
-        <view class='goodPrice'>¥ {{item.price}}</view>
-        <view class='goodOriPrice'>¥ {{item.oriPrice}}</view>
+        <view class='goodPrice'>¥ {{item.minPrice}}</view>
+        <view class='goodOriPrice' wx:if='{{item.originalPrice > 0}}'>¥ {{item.originalPrice}}</view>
       </view>
     </view>
+    <view class='nodata' wx:if="{{goodsList.length <= 0}}">没有更多了</view>
   </view>
 
 </view>

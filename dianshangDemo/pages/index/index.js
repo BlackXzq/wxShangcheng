@@ -9,8 +9,9 @@ Page({
    */
   data: {
     banners: null,
-    types: ["全部", "上装", "裤装","家居内衣","特价区","裙装","套装","外套","秒杀"],
-    selectTypeIndex:0,
+    types: null,
+    currentTypeID:0,
+    searchInput:"",
     notices:["商铺新开张，优惠多多，戳 戳 我看详情",
              "大甩卖，大甩卖，老板带着秘书跑路了～～",
              "耐克店庆100周年，全场5折。。。"],
@@ -65,15 +66,6 @@ Page({
     ]
   },
 
-  typeItemClick: function(e) {
-    var index = e.currentTarget.dataset.index;
-    this.setData({
-      selectTypeIndex:index
-    });
-    var random = Math.random()*6;
-    console.log(parseInt(random));
-  }, 
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -102,6 +94,7 @@ Page({
     wx.request({
       url: 'https://api.it120.cc/tz/shop/goods/category/all',
       success: function (res) {
+        console.log(res);
         var categories = [{ id: 0, name: "全部" }];
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.length; i++) {
@@ -109,14 +102,64 @@ Page({
           }
         }
         that.setData({
-          categories: categories,
-          activeCategoryId: 0
+          types: categories,
+          currentTypeID: 0
         });
         that.getGoodsList(0);
       }
     })
 
   },
+
+  goodsItemTap: function(e) {
+    console.log(e);
+    var typesId = e.currentTarget.dataset.typeid;
+    if (typesId != 0) {
+      wx.navigateTo({
+        url: "/pages/goodsDetail/goodsDetail?id=" + typesId
+      })
+    }
+  },
+
+  getGoodsList: function (categoryId) {
+    if (categoryId == 0) {
+      categoryId = "";
+    }
+    console.log(categoryId)
+    var that = this;
+    wx.request({
+      url: 'https://api.it120.cc/tz/shop/goods/list',
+      data: {
+        categoryId: categoryId
+        // nameLike: that.data.searchInput
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          goodsList: []
+        });
+        if (res.data.code == 0) {
+          var goods = [];
+          for (var i = 0; i < res.data.data.length; i++) {
+            goods.push(res.data.data[i]);
+          }
+          console.log(goods);
+          that.setData({
+            goodsList: goods,
+          });
+        }
+      }
+    })
+  },
+
+  typeItemClick: function (e) {
+    var categoryId = e.currentTarget.dataset.id;
+    this.setData({
+      currentTypeID: categoryId
+    });
+
+    this.getGoodsList(categoryId);
+  }, 
 
   tapSwiperImg: function (e) {
     if (e.currentTarget.dataset.id != 0) {
